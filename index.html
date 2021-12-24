@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do-List</title>
+</head>
+
+<body>
+    
+    <h1 class="task-title">Your To-Do List</h1>
+
+    <div class="tasks">
+
+        <h2 class="task-list-title">Your List(s)</h2>
+
+        <ul class="task-list">
+            <li class="list-name active">Grocery</li>
+            <li class="list-name">House Shopping</li>
+            <li class="list-name">Vaccation</li>
+            <li class="list-name">Work Schedule</li>
+        </ul>
+
+        <form action="">
+            <input type="text" class="new-list" placeholder="Create a new list!" aria-label="new-list-name"/>
+            <button class="btn-create" aria-label="create new-list">+</button>
+        </form>
+    </div>
+
+    <div class="todo-list">
+
+        <div class="todo-h">
+            <h2 class="list-title">Grocery</h2>
+            <p class="task-count">
+                4 tasks left!
+            </p>
+        </div>
+
+        <div class="todo-body">
+            <div class="tasks">
+
+                <div class="task">
+                    <input type="checkbox" id="task-1" />
+                    <label for="task-1" class="strikethrough">
+                        <span class="custom-checkbox"></span>
+                        Strawberries 250gms
+                    </label>
+                </div>
+
+                <!-- End of Task-1  -->
+
+                <div class="task">
+                    <input type="checkbox" id="task-2" />
+                    <label for="task-2" class="strikethrough">
+                        <span class="custom-checkbox"></span>
+                        Cornflour 2 Big Packets
+                    </label>
+                </div> 
+
+                <!-- End of Task-2  -->
+
+                <div class="task">
+                    <input type="checkbox" id="task-3" />
+                    <label for="task-3" class="strikethrough">
+                        <span class="custom-checkbox"></span>
+                        Tomato Ketchup 5 Packets
+                    </label>
+                </div>
+
+                <!-- End of Task-3 -->
+
+                <div class="task">
+                    <input type="checkbox" id="task-4" />
+                    <label for="task-4" class="strikethrough">
+                        <span class="custom-checkbox"></span>
+                        Chocolates - Silk, Kitkat
+                    </label>
+                </div>
+
+                <!-- End of Task-4 -->
+
+                <div class="new-task-creator">
+                    <form action="">
+                        <input type="text" class="new-task" placeholder="Create a new task!" aria-label="new-task-name" />
+                        <button class="btn-create" aria-label="create-new-task">+</button>
+                    </form>
+                </div>
+
+                <div class="delete-tasks">
+                    <button class="btn-delete">Clear Task</button> 
+                    <button class="btn-delete">Delete List</button> 
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

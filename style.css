@@ -1,0 +1,225 @@
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: monospace, 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-size: 1.2rem;
+    background-color: #c9ccd5;
+    display: grid;
+    grid: "header header header header"
+        auto ".....lists active ....."
+        auto /1fr minmax(100px, 300px) minmax(350px, 600px) 1fr;
+}
+
+.task-title {
+    grid-area: header;
+    text-align: center;
+    font-size: calc(5vw + 1.5rem);
+    font-weight: 900;
+    color: #4e7497;
+    text-shadow: 5px -5px 10px #808080,
+        -5px 5px 10px #ffffff;
+    letter-spacing: 5px;
+    margin: 2rem 0 3rem;
+}
+
+.task-list-title {
+    color: #4e7497;
+    text-shadow: 5px -5px 10px #6b6767,
+        -5px 5px 10px #ffffff;
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.tasks {
+    /* margin: auto; */
+    margin-left: 8vw;
+    /* margin-right: 2vw; */
+    grid-area: auto;
+}
+
+.task-list {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    list-style: circle;
+    padding-left: 3rem;
+}
+
+.task-count {
+    color: #ce0b0bdc;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.task label {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.task {
+    color: #1352b1;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5rem;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+}
+
+.active {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.list-name {
+    color: #3f505f;
+    cursor: pointer;
+}
+
+.list-name:hover {
+    transform: scale(1.1);
+    transition: 150ms ease-in-out;
+    opacity: 0.6;
+}
+
+
+.list-title {
+    margin: 0 1rem 0 0;
+}
+
+form {
+    display: flex;
+}
+
+.btn-create {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: #336085;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-right: 0.25rem;
+    transition: opacity 250ms ease-in-out;
+}
+
+.btn-create:hover {
+    opacity: 0.5;
+    transform: scale(1.5);
+}
+
+.btn-delete {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    opacity: 0.7;
+    font-size: 1.2rem;
+    margin-bottom: -5%;
+    transition: color 200ms;
+}
+
+.btn-delete:hover {
+    color: #cf1515;
+    transform: scale(1.2);
+}
+
+.todo-list {
+    --spacer: 2rem;
+    grid-area: active;
+    border-radius: 17px;
+    background: linear-gradient(145deg, #d0ebf3, #9499af);
+    box-shadow: 11px 11px 50px #646262,
+        -11px -11px 50px #e4d8dc;
+}
+
+.todo-h {
+    padding: var(--spacer);
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    color: #415e7a;
+    background: #8cb1c7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-body {
+    padding: var(--spacer);
+    position: relative;
+}
+
+[type="checkbox"] {
+    position: absolute;
+}
+
+input[type=checkbox]:checked+label.strikethrough {
+    text-decoration: line-through;
+    text-decoration-color: #273644;
+}
+
+[type="checkbox"]:checked+label {
+    opacity: 0.5;
+}
+
+.custom-checkbox {
+    --size: 0.75rem;
+    display: inline-block;
+    width: var(--size);
+    height: var(--size);
+    margin-right: var(--size);
+    cursor: pointer;
+}
+
+.new-list, .new-task {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    color: inherit;
+    font-size: inherit;
+    outline: none;
+    padding: 0.25rem;
+    transition: border-bottom 150ms ease-in;
+    order: 2;
+}
+
+.new-task:focus {
+    border-bottom-width: 3px;
+}
+
+.new-list:focus {
+    border-bottom-width: 3px;
+}
+
+.new-task:focus::placeholder {
+    opacity: 0.5;
+}
+
+.new-list:focus::placeholder {
+    opacity: 0.5;
+}
+
+.delete-tasks {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -35px;
+    color: #24241f;
+}
